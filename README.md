@@ -49,6 +49,12 @@ Here's a brief overview of what each product of the stack does. I'm probably not
 
 ## <a name="setup"></a>Setup
 
+As part of this demo I'm going to also use one of my other sample application as demonstration - https://github.com/colinbut/microservices-template
+
+This is how it fits together:
+
+![Image of the stack](etc/stack-overview.png)
+
 ### <a name="download"></a>Download 
 Download all the services below from elastic.co site's download pages of each of their products.
 Unpack all the services into their own distinct binary directories.
