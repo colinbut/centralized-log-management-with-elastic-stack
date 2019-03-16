@@ -8,7 +8,9 @@ elastic.co has in-depth tutorial & guides as part of their documentation along w
 
 ## The Elastic Stack
 
-What is the elastic stack? The Elastic Stack is the new name for the list of products offered by elastic.co
+What is the elastic stack? 
+
+The Elastic Stack is the new name for the list of products offered by elastic.co
 
 Previously this was commonly known as the ELK Stack (because it ONLY contained ElasticSearch-Logstash-Kibana). But now it has outgrown that to contain more software products most noticeably Beats (which consist of many individual components), APM (Application Performance Monitoring), Elastic on the Cloud offering and a few more. 
 
@@ -76,10 +78,10 @@ output {
 
 In above I configured stdin & stdout plugins for input & output respectively simply for as a means of sanity test to ensure Logstash is up and running and appears fine to me. 
 
-### Filebeat
+### 3 Filebeat
 
 ```bash
-/bin/filebeat
+./filebeat
 ```
 
 Filebeat is a lightweight log shipper. All it does is gather the logs from your application(s) and ships it to ELK stack. As an addition to the ELK stack, beat that made ELK stack became what is now known as Elastic Stack.
@@ -93,18 +95,42 @@ Filebeat is a lightweight log shipper. All it does is gather the logs from your 
     - /Applications/dev-sandbox/projects/microservices-template/logs/microservice-template*.log
 ```
 
-### Metricbeat
+### 4 Metricbeat
 
-[TBD]
+```bash
+./metricbeat
+```
 
-### Kibana
+The following configuration setups predefined dashboards made already by Elastic on Kibana and tells Metricbeat to ship metric data onto ElasticSearch.
+
+```yaml
+setup.dashboards.enabled: true 
+
+setup.kibana:
+  host: "localhost:5601"
+
+#-------------------------- Elasticsearch output ------------------------------
+output.elasticsearch:
+  hosts: ["localhost:9200"]
+```
+
+Metricbeat needs to be run on the same host as the application that it monitors for metrics. If application is containerized (Docker) then Metricbeat can also gather metrics from within the Docker container and you can then view the metrics data on the predefined Kibana dashboards.
+
+
+### 5 Kibana
+
+Finally, the visualization tool of the Elastic Stack allowing you to "see" the data ingested for analysis. 
 
 ```bash
 /bin/kibana
 ```
 
-Finally, the visualization tool of the Elastic Stack allowing you to "see" the data ingested for analysis. 
+No special configuration required and can use defaults as everything in Kibana setup is defaulted. The ElasticSearch url needs changing if Kibana is not run on the same host as ElasticSearch is.
 
 With Kibana you can use it as a centralized logging tool where you can see all your logs for all your applications in one place.
 You can also create various dashboards of different types of graphs of your log data.
+
+#### Creating index pattern
+
+#### Viewing Logs
 
