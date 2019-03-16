@@ -116,6 +116,10 @@ output.elasticsearch:
 
 Metricbeat needs to be run on the same host as the application that it monitors for metrics. If application is containerized (Docker) then Metricbeat can also gather metrics from within the Docker container and you can then view the metrics data on the predefined Kibana dashboards.
 
+![Image of Metricbeat dashboard](etc/metricbeat-dashboard.png)
+
+__Full Screen View__
+![Image of Metricbeat dashboard](etc/metricbeat-dashboard-fullscreen.png)
 
 ### 5 Kibana
 
@@ -132,5 +136,21 @@ You can also create various dashboards of different types of graphs of your log 
 
 #### Creating index pattern
 
-#### Viewing Logs
+To view logs or any other data you require to configure on the Kibana UI to tell it what ElasticSearch Indices to look for.
+All data is stored in ElasticSearch as a series of indices with data.
 
+![Image of Creating Index Pattern](etc/creating-index-pattern.png)
+
+#### Viewing logs
+
+![Image of Kibana View Log](etc/kibana-view-log.png)
+
+__Inspecting the table view__
+![Image of Kibana Table View Log](etc/kibana-logs-table-view.png)
+
+__Looking at the JSON view__
+![Image of Kibana JSON View Log](etc/kibana-logs-json-view.png)
+
+#### Searching logs
+
+![Image of Kibana Search Log](etc/kibana-search-log.png)
