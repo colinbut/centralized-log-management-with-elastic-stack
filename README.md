@@ -82,7 +82,20 @@ In above I configured stdin & stdout plugins for input & output respectively sim
 /bin/filebeat
 ```
 
+Filebeat is a lightweight log shipper. All it does is gather the logs from your application(s) and ships it to ELK stack. As an addition to the ELK stack, beat that made ELK stack became what is now known as Elastic Stack.
+
+`filebeat.yml`
+
+```yaml
+- type: log
+  enabled: true
+  paths:
+    - /Applications/dev-sandbox/projects/microservices-template/logs/microservice-template*.log
+```
+
 ### Metricbeat
+
+[TBD]
 
 ### Kibana
 
