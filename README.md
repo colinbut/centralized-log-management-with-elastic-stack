@@ -1,4 +1,4 @@
-# Setup Elastic Stack
+# Centralized Log Management with Elastic Stack
 
 ## Table of Contents
 
