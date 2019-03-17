@@ -1,4 +1,4 @@
-# Centralized Log Management with Elastic Stack
+# Centralized Logging with Elastic Stack
 
 ## Table of Contents
 
